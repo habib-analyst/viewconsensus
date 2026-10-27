@@ -1,0 +1,53 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "viewconsensus"
+version = "0.1.0"
+description = "Ask several views of one image to vote: consensus probability, uncertainty, per-view explanations, and a defer-to-human verdict for any image classifier."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Habib Ur Rehman" }]
+keywords = [
+  "test-time-augmentation",
+  "uncertainty",
+  "consensus",
+  "selective-prediction",
+  "image-classification",
+  "explainability",
+]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Developers",
+  "Intended Audience :: Science/Research",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+dependencies = [
+  "numpy>=1.24",
+  "Pillow>=10",
+  "torch>=2.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8"]
+
+[project.urls]
+Homepage = "https://github.com/habib-analyst/viewconsensus"
+Repository = "https://github.com/habib-analyst/viewconsensus"
+Issues = "https://github.com/habib-analyst/viewconsensus/issues"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+viewconsensus = ["py.typed"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
